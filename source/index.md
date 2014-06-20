@@ -40,11 +40,11 @@ full_title: "Gush: Rapid workflow for project maintainers and contributors"
     </div>
 
     <p>
-        After installation is done please run the <strong class="title">configure</strong> command.
+        After installation is done please run the <strong class="title">core:configure</strong> command.
     </p>
 
     <div class="code cli">
-        <pre class="cli">$ gush configure</pre>
+        <pre class="cli">$ gush core:configure</pre>
     </div>
 
 
