@@ -25,6 +25,7 @@ bldr:
                         - install
         dispatch:
             description: Dispatches sculpin to build site as it watches for changes
+            calls:
                 -
                     type: exec
                     executable: clear
