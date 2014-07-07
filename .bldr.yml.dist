@@ -1,27 +1,38 @@
 bldr:
     name: gushphp/gush-site
-    description: Gush Project
+    description: Gush Website
     profiles:
         local:
             description: Local Development Profile
             tasks:
-                - localDev
+                - installSculpin
+                - dispatch
     tasks:
-        localDev:
-            description: Runs sculpin
+        installSculpin:
+            description: Installs Sculpin
             calls:
+                -
+                    type: exec
+                    executable: curl
+                    arguments:
+                        - -O
+                        - https://download.sculpin.io/sculpin.phar
+                -
+                    type: exec
+                    executable: php
+                    arguments:
+                        - ./sculpin.phar
+                        - install
+        dispatch:
+            description: Dispatches sculpin to build site as it watches for changes
                 -
                     type: exec
                     executable: clear
                 -
                     type: exec
-                    executable: sculpin
+                    executable: php
                     arguments:
-                        - install
-                -
-                    type: exec
-                    executable: sculpin
-                    arguments:
+                        - ./sculpin.phar
                         - generate
                         - --watch
                         - --server
