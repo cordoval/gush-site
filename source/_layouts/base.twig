@@ -8,23 +8,28 @@
     {% block navigation_wrapper %}
         {% block navigation %}
             <nav role="navigation">{% include "navigation.html" %}</nav>
-        {% endblock %}
-    {% endblock %}
+        {% endblock navigation %}
+    {% endblock navigation_wrapper %}
     {% block hero_wrapper %}
-        {% block hero %}{% endblock %}
-    {% endblock %}
+        {% block hero %}
+        {% endblock hero %}
+    {% endblock hero_wrapper %}
     <div id="main">
         <div id="content">
             <div class="container">
-                {% block content_wrapper %}{% block content %}{% endblock %}{% endblock %}
+                {% block content_wrapper %}
+                    {% include "content_wrapper.html" %}
+                    {% block content %}
+                    {% endblock content %}
+                {% endblock content_wrapper %}
             </div>
         </div>
     </div>
     {% block footer_wrapper %}
         {% block footer %}
             <footer role="contentinfo">{% include "footer.html" %}</footer>
-        {% endblock %}
-    {% endblock %}
+        {% endblock footer %}
+    {% endblock footer_wrapper %}
     {% include "after_footer.html" %}
 </body>
 </html>

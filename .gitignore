@@ -4,3 +4,4 @@
 /source/components/
 s3.conf
 /source/commands
+*.phar
