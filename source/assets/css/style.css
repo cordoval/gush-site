@@ -2,6 +2,13 @@ body {
     font-family: "Archivo Narrow", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+/* Logos at bottom of site */
+#main a > img {
+width: 150px;
+height: auto;
+padding: 15px 0;
+}
+
 .navbar.navbar-default {
     border-radius: 0;
 }
